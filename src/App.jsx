@@ -19,6 +19,7 @@ import belt2 from "./assets/belt2.webp";
 import belt3 from "./assets/belt3.jpg";
 import belt4 from "./assets/belt4.png";
 import Cart from "./Pages/Cart";
+import { useEffect } from "react";
 const products = [
   {
     id: 1,
@@ -107,6 +108,12 @@ const products = [
 ];
 
 function App() {
+  
+  useEffect(() => {
+    if (localStorage.getItem("items") === null)
+      localStorage.setItem("items", JSON.stringify([]));
+  }, []);
+
   return (
     <div className="App">
       <Header />
@@ -139,7 +146,7 @@ function App() {
             />
           }
         />
-        <Route path='/cart' element={<Cart product = {products}/>} />
+        <Route path="/cart" element={<Cart product={products} />} />
       </Routes>
     </div>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import ProductCard from "../Components/ProductCard";
 
-const Boots = ({product, banner}) => {
+const Boots = ({ product, banner }) => {
   return (
     <div className="product">
       <img src={banner} alt="" />
@@ -9,7 +9,8 @@ const Boots = ({product, banner}) => {
         {product.map((item, idx) => {
           return (
             <ProductCard
-              id={idx}
+              key={idx}
+              id={item.id}
               name={item.name}
               price={item.price}
               img={item.img}

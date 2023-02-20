@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
 const CartComponent = ({
   products,
   id,
   onChangeProductQuantity,
   onRemoveProduct,
+  qty,
 }) => {
+  const [proQty, setProQty] = useState(qty);
+
+  const handleChange = (event) => {
+    // console.log(event.target.value, proQty)
+
+    onChangeProductQuantity(id, qty, event.target.value);
+    setProQty(() => event.target.value);
+  };
+
   return (
     <section className="container">
       {products.map((product, index) => {
@@ -15,14 +25,10 @@ const CartComponent = ({
               <li className="row" key={index}>
                 <div className="col left">
                   <div className="thumbnail">
-                    <a href="#">
-                      <img src={product.img} alt={product.name} />
-                    </a>
+                    <img src={product.img} alt={product.name} />
                   </div>
                   <div className="detail">
-                    <div className="name">
-                      <a href="#">{product.name}</a>
-                    </div>
+                    <div className="name">{product.name}</div>
                     <div className="description">{product.description}</div>
                     <div className="price">₹ {product.price}</div>
                   </div>
@@ -31,13 +37,13 @@ const CartComponent = ({
                 <div className="col right">
                   <div className="quantity">
                     <input
-                      type="number"
+                      type="text"
                       className="quantity"
                       step="1"
-                      value={product.quantity}
-                      onChange={(event) =>
-                        onChangeProductQuantity(id, event)
-                      }
+                      name="qty"
+                      defaultValue={1}
+                      value={proQty}
+                      onChange={handleChange}
                     />
                   </div>
 

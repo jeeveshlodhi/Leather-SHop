@@ -8,7 +8,8 @@ const ProductCard = ({ name, price, img, id, category }) => {
       let items = []
       let obj = {
         id: id,
-        name:name,
+        price:price,
+        value:1
       }
       items.push(JSON.stringify(obj))
       localStorage.setItem('items', JSON.stringify(items))
@@ -18,7 +19,8 @@ const ProductCard = ({ name, price, img, id, category }) => {
       let storedItems = JSON.parse(localStorage.getItem('items'))
       let obj = {
         id: id,
-        name:name,
+        price: price,
+        value:1
       }
       storedItems.push(JSON.stringify(obj))
       localStorage.setItem('items', JSON.stringify(storedItems))
@@ -44,6 +46,7 @@ const ProductCard = ({ name, price, img, id, category }) => {
       </button>
       <p>{name}</p>
       <p>₹ {price}</p>
+      <p>{id}</p>
     </div>
   );
 };
