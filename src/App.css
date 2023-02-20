@@ -1,0 +1,211 @@
+#root {
+  margin: 0;
+}
+.App{
+}
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: fit-content;
+  padding: 0 2rem;
+}
+
+.header ul{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  list-style: none;
+}
+
+.header ul li{
+  padding: .5rem 1rem;
+  cursor: pointer;
+}
+
+.home{
+  margin: .5rem 2rem;
+}
+
+.home > h3{
+  text-align: center;
+}
+
+.home-category{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.home-category  img{
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.product {
+  margin: .25rem 2rem;
+}
+
+.product > img{
+  width: 100%;
+}
+
+.product-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.productCard{
+  margin: .5rem;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.productCard > img{
+  width: 300px;
+}
+
+.productCard > p{
+  margin: 0.25rem 0;
+}
+
+.productCard > button{
+  position: absolute;
+}
+
+.cart{
+  margin: .25rem 2rem;
+}
+
+.cart > h3{
+  text-align: center;
+}
+
+.cart-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 10rem;
+}
+
+.cart-head > ul{
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding-inline-start: 0 !important;
+}
+
+.products {
+  border-top: 1px solid #ddd;
+}
+
+.products > li {
+  padding: 1rem 0;
+}
+
+
+input {
+  outline: none;
+  
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  overflow: auto;
+}
+.row {
+  position: relative;
+  overflow: auto;
+  width: 100%;
+}
+
+.col, .quantity, .remove {
+  float: left;
+}
+
+.col.left {
+  width: 70%;
+  display: flex;
+}
+
+.col.right {
+  width: 30%;
+  position: absolute;
+  right: 0;
+  top: calc(50% - 30px);
+}
+
+.detail {
+  padding: 0 0.5rem;
+  line-height: 2.2rem;
+}
+
+.detail .name {
+  font-size: 1.2rem;
+}
+
+.detail .description {
+  color: #7d7d7d;
+  font-size: 1rem;
+}
+
+.detail .price {
+  font-size: 1.5rem;
+}
+
+
+.quantity, .remove {
+  width: 50%;
+  text-align: center;
+}
+
+.remove svg {
+  width: 60px;
+  height: 60px;
+}
+
+.quantity > input {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  position: relative;
+  left: calc(50% - 30px);
+  background: #fff;
+  border: 2px solid #ddd;
+  color: #7f7f7f;
+  text-align: center;
+  font: 600 1.5rem Helvetica, Arial, sans-serif;
+}
+
+.quantity > input:hover, .quantity > input:focus {
+  border-color: #f58551;
+}
+
+.close {
+  fill: #7d7d7d;
+  transition: color 150ms linear,
+    background-color 150ms linear,
+    fill 150ms linear,
+    150ms opacity linear;
+  cursor: pointer;
+}
+
+.close:hover {
+  fill: #f58551;
+}
+
+.thumbnail img{
+  width: 100px;
+}
